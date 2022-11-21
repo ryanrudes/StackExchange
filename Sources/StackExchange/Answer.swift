@@ -112,7 +112,7 @@ public struct Answer: Codable {
     }
 
     public func encode(to encoder: Encoder) throws {
-        public var container = encoder.container(keyedBy: CodingKeys.self)
+        var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(accepted, forKey: .accepted)
         try container.encode(answerID, forKey: .answerID)
         try container.encode(awardedBountyAmount, forKey: .awardedBountyAmount)
