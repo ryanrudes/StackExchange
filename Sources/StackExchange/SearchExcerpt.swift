@@ -1,6 +1,6 @@
 import Foundation
 
-struct SearchExcerpt: Codable {
+public struct SearchExcerpt: Codable {
     var answerCount: Int?
     var answerID: Int?
     var body: String
@@ -23,12 +23,12 @@ struct SearchExcerpt: Codable {
     var tags: [String]?
     var title: String
     
-    enum ItemType: String, Codable {
+    public enum ItemType: String, Codable {
         case question
         case answer
     }
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case answerCount = "answer_count"
         case answerID = "answer_id"
         case body
@@ -52,7 +52,7 @@ struct SearchExcerpt: Codable {
         case title
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         answerCount = try values.decode(Int?.self, forKey: .answerCount)
         answerID = try values.decode(Int?.self, forKey: .answerID)
@@ -77,7 +77,7 @@ struct SearchExcerpt: Codable {
         title = try values.decode(String.self, forKey: .title)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(answerCount, forKey: .answerCount)
         try container.encode(answerID, forKey: .answerID)

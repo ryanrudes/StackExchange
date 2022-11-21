@@ -1,6 +1,6 @@
 import Foundation
 
-struct InboxItem: Codable {
+public struct InboxItem: Codable {
     var answerID: Int?
     var body: String?
     var commentID: Int?
@@ -12,7 +12,7 @@ struct InboxItem: Codable {
     var site: Site?
     var title: String
 
-    enum ItemType: String, Codable {
+    public enum ItemType: String, Codable {
         case comment
         case chatMessage = "chat_message"
         case newAnswer = "new_answer"
@@ -24,7 +24,7 @@ struct InboxItem: Codable {
         case subcommunityLeaderboard = "subcommunity_leaderboard"
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case answerID = "answer_id"
         case body
         case commentID = "comment_id"
@@ -37,7 +37,7 @@ struct InboxItem: Codable {
         case title
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         answerID = try values.decode(Int?.self, forKey: .answerID)
         body = try values.decode(String?.self, forKey: .body)
@@ -51,7 +51,7 @@ struct InboxItem: Codable {
         title = try values.decode(String.self, forKey: .title)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(answerID, forKey: .answerID)
         try container.encode(body, forKey: .body)

@@ -1,6 +1,6 @@
 import Foundation
 
-enum Scope: String {
+public enum Scope: String {
     /// access a user's global inbox
     case readInbox = "read_inbox"
     /// access\_tokens with this scope do not expire

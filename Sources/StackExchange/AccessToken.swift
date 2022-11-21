@@ -1,19 +1,19 @@
 import Foundation
 
-struct AccessToken: Codable {
+public struct AccessToken: Codable {
     var accessToken: String
     var accountID: Int
     var expiresOnDate: Date?
     var scope: [String]?
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case accountID = "account_id"
         case expiresOnDate = "expires_on_date"
         case scope
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accessToken = try values.decode(String.self, forKey: .accessToken)
         accountID = try values.decode(Int.self, forKey: .accountID)
@@ -21,7 +21,7 @@ struct AccessToken: Codable {
         scope = try values.decode([String]?.self, forKey: .scope)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(accessToken, forKey: .accessToken)
         try container.encode(accountID, forKey: .accountID)

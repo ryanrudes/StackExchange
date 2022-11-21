@@ -1,25 +1,25 @@
 import Foundation
 
-struct RelatedSite: Codable {
+public struct RelatedSite: Codable {
     var apiSiteParameter: String?
     var name: String
     var relation: Relation
     var siteUrl: String
     
-    enum Relation: String, Codable {
+    public enum Relation: String, Codable {
         case parent
         case meta
         case chat
     }
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case apiSiteParameter = "api_site_parameter"
         case name
         case relation
         case siteUrl = "site_url"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         apiSiteParameter = try values.decode(String?.self, forKey: .apiSiteParameter)
         name = try values.decode(String.self, forKey: .name)
@@ -27,7 +27,7 @@ struct RelatedSite: Codable {
         siteUrl = try values.decode(String.self, forKey: .siteUrl)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(apiSiteParameter, forKey: .apiSiteParameter)
         try container.encode(name, forKey: .name)

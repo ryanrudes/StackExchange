@@ -1,6 +1,6 @@
 import Foundation
 
-struct ShallowUser: Codable {
+public struct ShallowUser: Codable {
     var acceptRate: Int?
     var accountID: Int
     var badgeCounts: BadgeCount
@@ -11,7 +11,7 @@ struct ShallowUser: Codable {
     var userID: Int?
     var userType: UserType
 
-    enum UserType: String, Codable {
+    public enum UserType: String, Codable {
         case unregistered
         case registered
         case moderator
@@ -19,7 +19,7 @@ struct ShallowUser: Codable {
         case doesNotExist = "does_not_exist"
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case acceptRate = "accept_rate"
         case accountID = "account_id"
         case badgeCounts = "badge_counts"
@@ -31,7 +31,7 @@ struct ShallowUser: Codable {
         case userType = "user_type"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         acceptRate = try values.decode(Int?.self, forKey: .acceptRate)
         accountID = try values.decode(Int.self, forKey: .accountID)
@@ -44,7 +44,7 @@ struct ShallowUser: Codable {
         userType = try values.decode(UserType.self, forKey: .userType)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(acceptRate, forKey: .acceptRate)
         try container.encode(accountID, forKey: .accountID)

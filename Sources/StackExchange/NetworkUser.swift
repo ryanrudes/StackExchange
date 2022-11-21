@@ -1,6 +1,6 @@
 import Foundation
 
-struct NetworkUser: Codable {
+public struct NetworkUser: Codable {
     var accountID: Int
     var answerCount: Int
     var badgeCounts: BadgeCount
@@ -15,7 +15,7 @@ struct NetworkUser: Codable {
     var userID: Int
     var userType: UserType
     
-    enum UserType: String, Codable {
+    public enum UserType: String, Codable {
         case unregistered
         case registered
         case moderator
@@ -23,7 +23,7 @@ struct NetworkUser: Codable {
         case doesNotExist = "does_not_exist"
     }
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case accountID = "account_id"
         case answerCount = "answer_count"
         case badgeCounts = "badge_counts"
@@ -39,7 +39,7 @@ struct NetworkUser: Codable {
         case userType = "user_type"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accountID = try values.decode(Int.self, forKey: .accountID)
         answerCount = try values.decode(Int.self, forKey: .answerCount)
@@ -56,7 +56,7 @@ struct NetworkUser: Codable {
         userType = try values.decode(UserType.self, forKey: .userType)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(accountID, forKey: .accountID)
         try container.encode(answerCount, forKey: .answerCount)

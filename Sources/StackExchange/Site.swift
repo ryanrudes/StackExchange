@@ -1,6 +1,6 @@
 import Foundation
 
-struct Site: Codable {
+public struct Site: Codable {
     var aliases: [String]?
     var apiSiteParameter: String
     var audience: String
@@ -20,26 +20,26 @@ struct Site: Codable {
     var styling: Styling
     var twitterAccount: String?
 
-    enum MarkdownExtension: String, Codable {
+    public enum MarkdownExtension: String, Codable {
         case mathjax = "MathJax"
         case prettify = "Prettify"
         case balsamiq = "Balsamiq"
         case jtab = "jTab"
     }
     
-    enum SiteState: String, Codable {
+    public enum SiteState: String, Codable {
         case normal
         case closedBeta = "closed_beta"
         case openBeta = "open_beta"
         case linkedMeta = "linked_meta"
     }
     
-    enum SiteType: String, Codable {
+    public enum SiteType: String, Codable {
         case main = "main_site"
         case meta = "meta_site"
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case aliases
         case apiSiteParameter = "api_site_parameter"
         case audience
@@ -60,7 +60,7 @@ struct Site: Codable {
         case twitterAccount = "twitter_account"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         aliases = try values.decode([String]?.self, forKey: .aliases)
         apiSiteParameter = try values.decode(String.self, forKey: .apiSiteParameter)
@@ -82,7 +82,7 @@ struct Site: Codable {
         twitterAccount = try values.decode(String?.self, forKey: .twitterAccount)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(aliases, forKey: .aliases)
         try container.encode(apiSiteParameter, forKey: .apiSiteParameter)

@@ -1,6 +1,6 @@
 import Foundation
 
-struct OriginalQuestion: Codable {
+public struct OriginalQuestion: Codable {
     var acceptedAnswerid: Int?
     var answerCount: Int
     var questionID: Int
@@ -13,7 +13,7 @@ struct OriginalQuestion: Codable {
         case title
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         acceptedAnswerid = try values.decode(Int?.self, forKey: .acceptedAnswerid)
         answerCount = try values.decode(Int.self, forKey: .answerCount)
@@ -21,7 +21,7 @@ struct OriginalQuestion: Codable {
         title = try values.decode(String.self, forKey: .title)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(acceptedAnswerid, forKey: .acceptedAnswerid)
         try container.encode(answerCount, forKey: .answerCount)

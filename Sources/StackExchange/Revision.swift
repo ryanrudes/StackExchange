@@ -1,6 +1,6 @@
 import Foundation
 
-struct Revision: Codable {
+public struct Revision: Codable {
     var body: String?
     var comment: String
     var contentLicense: String
@@ -19,18 +19,18 @@ struct Revision: Codable {
     var title: String?
     var user: ShallowUser
     
-    enum PostType: String, Codable {
+    public enum PostType: String, Codable {
         case question
         case answer
         case article
     }
     
-    enum RevisionType: String, Codable {
+    public enum RevisionType: String, Codable {
         case singleUser = "single_user"
         case voteBased = "vote_based"
     }
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case body
         case comment
         case contentLicense = "content_license"
@@ -50,7 +50,7 @@ struct Revision: Codable {
         case user
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         body = try values.decode(String?.self, forKey: .body)
         comment = try values.decode(String.self, forKey: .comment)
@@ -71,7 +71,7 @@ struct Revision: Codable {
         user = try values.decode(ShallowUser.self, forKey: .user)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(body, forKey: .body)
         try container.encode(comment, forKey: .comment)

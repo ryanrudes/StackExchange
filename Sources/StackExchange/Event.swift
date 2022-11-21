@@ -1,13 +1,13 @@
 import Foundation
 
-struct Event: Codable {
+public struct Event: Codable {
     var creationDate: Date
     var eventID: Int
     var eventType: EventType
     var excerpt: String
     var link: String
     
-    enum EventType: String, Codable {
+    public enum EventType: String, Codable {
         case questionPosted = "question_posted"
         case answerPosted = "answer_posted"
         case commentPosted = "comment_posted"
@@ -15,7 +15,7 @@ struct Event: Codable {
         case userCreated = "user_created"
     }
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case creationDate = "creation_date"
         case eventID = "event_id"
         case eventType = "event_type"
@@ -23,7 +23,7 @@ struct Event: Codable {
         case link
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         creationDate = try values.decode(Date.self, forKey: .creationDate)
         eventID = try values.decode(Int.self, forKey: .eventID)
@@ -32,7 +32,7 @@ struct Event: Codable {
         link = try values.decode(String.self, forKey: .link)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(creationDate, forKey: .creationDate)
         try container.encode(eventID, forKey: .eventID)

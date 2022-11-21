@@ -1,6 +1,6 @@
 import Foundation
 
-struct Badge: Codable {
+public struct Badge: Codable {
     var awardCount: Int
     var badgeID: Int
     var badgeType: BadgeType
@@ -32,7 +32,7 @@ struct Badge: Codable {
         case user
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         awardCount = try values.decode(Int.self, forKey: .awardCount)
         badgeID = try values.decode(Int.self, forKey: .badgeID)
@@ -44,7 +44,7 @@ struct Badge: Codable {
         user = try values.decode(ShallowUser?.self, forKey: .user)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(awardCount, forKey: .awardCount)
         try container.encode(badgeID, forKey: .badgeID)

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Info: Codable {
+public struct Info: Codable {
     var answersPerMinute: Double
     var apiRevision: String
     var badgesPerMinute: Double
@@ -16,7 +16,7 @@ struct Info: Codable {
     var totalUsers: Int
     var totalVotes: Int
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case answersPerMinute = "answers_per_minute"
         case apiRevision = "api_revision"
         case badgesPerMinute = "badges_per_minute"
@@ -33,7 +33,7 @@ struct Info: Codable {
         case totalVotes = "total_votes"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         answersPerMinute = try values.decode(Double.self, forKey: .answersPerMinute)
         apiRevision = try values.decode(String.self, forKey: .apiRevision)
@@ -51,7 +51,7 @@ struct Info: Codable {
         totalVotes = try values.decode(Int.self, forKey: .totalVotes)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(answersPerMinute, forKey: .answersPerMinute)
         try container.encode(apiRevision, forKey: .apiRevision)

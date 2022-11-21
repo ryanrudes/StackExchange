@@ -1,6 +1,6 @@
 import Foundation
 
-struct User: Codable {
+public struct User: Codable {
     var aboutMe: String?
     var acceptRate: Int?
     var accountID: Int
@@ -71,7 +71,7 @@ struct User: Codable {
         case websiteUrl = "website_url"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         aboutMe = try values.decode(String?.self, forKey: .aboutMe)
         acceptRate = try values.decode(Int?.self, forKey: .acceptRate)
@@ -104,7 +104,7 @@ struct User: Codable {
         websiteUrl = try values.decode(String?.self, forKey: .websiteUrl)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(aboutMe, forKey: .aboutMe)
         try container.encode(acceptRate, forKey: .acceptRate)

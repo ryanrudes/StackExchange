@@ -1,6 +1,6 @@
 import Foundation
 
-struct Achievement: Codable {
+public struct Achievement: Codable {
     var accountID: Int
     var achievementType: AchievementType
     var badgeRank: BadgeRank?
@@ -11,19 +11,19 @@ struct Achievement: Codable {
     var reputationChange: Int?
     var title: String
     
-    enum AchievementType: String, Codable {
+    public enum AchievementType: String, Codable {
         case badge
         case privlege
         case reputation
     }
     
-    enum BadgeRank: String, Codable {
+    public enum BadgeRank: String, Codable {
         case gold
         case silver
         case bronze
     }
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case accountID = "account_id"
         case achievementType = "achievement_type"
         case badgeRank = "badge_rank"
@@ -35,7 +35,7 @@ struct Achievement: Codable {
         case title
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         accountID = try values.decode(Int.self, forKey: .accountID)
         achievementType = try values.decode(AchievementType.self, forKey: .achievementType)
@@ -48,7 +48,7 @@ struct Achievement: Codable {
         title = try values.decode(String.self, forKey: .title)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(accountID, forKey: .accountID)
         try container.encode(achievementType, forKey: .achievementType)

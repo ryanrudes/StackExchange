@@ -1,6 +1,6 @@
 import Foundation
 
-struct SuggestedEdit: Codable {
+public struct SuggestedEdit: Codable {
     var approvalDate: Date?
     var body: String?
     var comment: String
@@ -13,13 +13,13 @@ struct SuggestedEdit: Codable {
     var tags: [String]?
     var title: String?
 
-    enum PostType: String, Codable {
+    public enum PostType: String, Codable {
         case question
         case answer
         case article
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case approvalDate = "approval_date"
         case body
         case comment
@@ -33,7 +33,7 @@ struct SuggestedEdit: Codable {
         case title
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         approvalDate = try values.decode(Date?.self, forKey: .approvalDate)
         body = try values.decode(String?.self, forKey: .body)
@@ -48,7 +48,7 @@ struct SuggestedEdit: Codable {
         title = try values.decode(String?.self, forKey: .title)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(approvalDate, forKey: .approvalDate)
         try container.encode(body, forKey: .body)

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Notification: Codable {
+public struct Notification: Codable {
     var body: String
     var creationDate: Date
     var isUnread: Bool
@@ -8,7 +8,7 @@ struct Notification: Codable {
     var postID: Int?
     var site: Site
     
-    enum NotificationType: String, Codable {
+    public enum NotificationType: String, Codable {
         case generic
         case profileActivity = "profile_activity"
         case bountyExpired = "bounty_expired"
@@ -26,7 +26,7 @@ struct Notification: Codable {
         case bountyGracePeriodStarted = "bounty_grace_period_started"
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case body
         case creationDate = "creation_date"
         case isUnread = "is_unread"
@@ -35,7 +35,7 @@ struct Notification: Codable {
         case site
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         body = try values.decode(String.self, forKey: .body)
         creationDate = try values.decode(Date.self, forKey: .creationDate)
@@ -45,7 +45,7 @@ struct Notification: Codable {
         site = try values.decode(Site.self, forKey: .site)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(body, forKey: .body)
         try container.encode(creationDate, forKey: .creationDate)

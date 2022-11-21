@@ -1,6 +1,6 @@
 import Foundation
 
-struct Collective: Codable {
+public struct Collective: Codable {
     var description: String
     var externalLinks: [CollectiveExternalLink]
     var link: String
@@ -8,7 +8,7 @@ struct Collective: Codable {
     var slug: String
     var tags: [String]
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case description
         case externalLinks = "external_links"
         case link
@@ -17,7 +17,7 @@ struct Collective: Codable {
         case tags
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         description = try values.decode(String.self, forKey: .description)
         externalLinks = try values.decode([CollectiveExternalLink].self, forKey: .externalLinks)
@@ -27,7 +27,7 @@ struct Collective: Codable {
         tags = try values.decode([String].self, forKey: .tags)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(description, forKey: .description)
         try container.encode(externalLinks, forKey: .externalLinks)

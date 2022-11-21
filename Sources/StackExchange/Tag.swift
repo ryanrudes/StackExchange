@@ -1,6 +1,6 @@
 import Foundation
 
-struct Tag: Codable {
+public struct Tag: Codable {
     var collectives: [Collective]?
     var count: Int
     var hasSynonyms: Bool
@@ -23,7 +23,7 @@ struct Tag: Codable {
         case userID = "user_id"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         collectives = try values.decode([Collective]?.self, forKey: .collectives)
         count = try values.decode(Int.self, forKey: .count)
@@ -36,7 +36,7 @@ struct Tag: Codable {
         userID = try values.decode(Int?.self, forKey: .userID)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(collectives, forKey: .collectives)
         try container.encode(count, forKey: .count)
