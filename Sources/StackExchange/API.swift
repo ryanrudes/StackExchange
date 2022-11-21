@@ -48,6 +48,10 @@ public struct API {
     let url = "https://api.stackexchange.com/2.3/"
     let version = 2.3
     
+    public init() {
+        
+    }
+    
     public func getAnswers(
         page: Int? = nil,
         pageSize: Int? = nil,
