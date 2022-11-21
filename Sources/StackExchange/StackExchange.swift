@@ -3,4 +3,8 @@ public struct StackExchange {
 
     public init() {
     }
+    
+    public func authenticate() throws {
+        
+    }
 }
