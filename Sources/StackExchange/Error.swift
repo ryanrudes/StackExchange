@@ -1,5 +1,6 @@
 import Foundation
 
+/*
 public struct Error: Codable {
     var description: String
     var errorID: Int
@@ -25,3 +26,4 @@ public struct Error: Codable {
         try container.encode(errorName, forKey: .errorName)
     }
 }
+*/
