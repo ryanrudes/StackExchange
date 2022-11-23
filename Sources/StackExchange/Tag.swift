@@ -1,15 +1,15 @@
 import Foundation
 
 public struct Tag: Codable {
-    var collectives: [Collective]?
-    var count: Int
-    var hasSynonyms: Bool
-    var isModeratorOnly: Bool
-    var isRequired: Bool
-    var lastActivityDate: Date?
-    var name: String
-    var synonyms: [String]
-    var userID: Int?
+    public var collectives: [Collective]?
+    public var count: Int
+    public var hasSynonyms: Bool
+    public var isModeratorOnly: Bool
+    public var isRequired: Bool
+    public var lastActivityDate: Date?
+    public var name: String
+    public var synonyms: [String]
+    public var userID: Int?
 
     enum CodingKeys: String, CodingKey {
         case collectives

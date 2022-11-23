@@ -1,15 +1,15 @@
 import Foundation
 
 public struct ShallowUser: Codable {
-    var acceptRate: Int?
-    var accountID: Int
-    var badgeCounts: BadgeCount
-    var displayName: String?
-    var link: String?
-    var profileImage: String?
-    var reputation: Int?
-    var userID: Int?
-    var userType: UserType
+    public var acceptRate: Int?
+    public var accountID: Int
+    public var badgeCounts: BadgeCount
+    public var displayName: String?
+    public var link: String?
+    public var profileImage: String?
+    public var reputation: Int?
+    public var userID: Int?
+    public var userType: UserType
 
     public enum UserType: String, Codable {
         case unregistered
@@ -19,7 +19,7 @@ public struct ShallowUser: Codable {
         case doesNotExist = "does_not_exist"
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case acceptRate = "accept_rate"
         case accountID = "account_id"
         case badgeCounts = "badge_counts"

@@ -1,11 +1,11 @@
 import Foundation
 
 public struct BadgeCount: Codable {
-    var bronze: Int
-    var gold: Int
-    var silver: Int
+    public var bronze: Int
+    public var gold: Int
+    public var silver: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case bronze
         case gold
         case silver

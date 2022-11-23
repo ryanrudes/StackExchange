@@ -1,13 +1,13 @@
 import Foundation
 
 public struct ClosedDetails: Codable {
-    var byUsers: [ShallowUser]
-    var description: String
-    var onHold: Bool
-    var originalQuestions: [OriginalQuestion]?
-    var reason: String
+    public var byUsers: [ShallowUser]
+    public var description: String
+    public var onHold: Bool
+    public var originalQuestions: [OriginalQuestion]?
+    public var reason: String
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case byUsers = "by_users"
         case description
         case onHold = "on_hold"

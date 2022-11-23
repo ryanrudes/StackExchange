@@ -1,9 +1,9 @@
 import Foundation
 
 public struct Filter: Codable {
-    var filter: String
-    var filterType: FilterType
-    var includedFields: [String]
+    public var filter: String
+    public var filterType: FilterType
+    public var includedFields: [String]
 
     public enum FilterType: String, Codable {
         case safe
@@ -11,7 +11,7 @@ public struct Filter: Codable {
         case invalid
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case filter
         case filterType = "filter_type"
         case includedFields = "included_fields"

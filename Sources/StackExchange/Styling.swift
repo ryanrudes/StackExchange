@@ -1,11 +1,11 @@
 import Foundation
 
 public struct Styling: Codable {
-    var linkColor: String
-    var tagBackgroundColor: String
-    var tagForegroundColor: String
+    public var linkColor: String
+    public var tagBackgroundColor: String
+    public var tagForegroundColor: String
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case linkColor = "link_color"
         case tagBackgroundColor = "tag_background_color"
         case tagForegroundColor = "tag_foreground_color"

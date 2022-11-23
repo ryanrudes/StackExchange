@@ -1,12 +1,12 @@
 import Foundation
 
 public struct Notification: Codable {
-    var body: String
-    var creationDate: Date
-    var isUnread: Bool
-    var notificationType: NotificationType
-    var postID: Int?
-    var site: Site
+    public var body: String
+    public var creationDate: Date
+    public var isUnread: Bool
+    public var notificationType: NotificationType
+    public var postID: Int?
+    public var site: Site
     
     public enum NotificationType: String, Codable {
         case generic
@@ -26,7 +26,7 @@ public struct Notification: Codable {
         case bountyGracePeriodStarted = "bounty_grace_period_started"
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case body
         case creationDate = "creation_date"
         case isUnread = "is_unread"

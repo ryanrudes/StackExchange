@@ -1,24 +1,24 @@
 import Foundation
 
 public struct Article: Codable {
-    var articleID: Int
-    var articleType: String
-    var body: String
-    var bodyMarkdown: String
-    var commentCount: Int
-    var comments: [Comment]?
-    var creationDate: Date
-    var lastActivityDate: Date
-    var lastEditDate: Date?
-    var lastEditor: ShallowUser
-    var link: String
-    var owner: ShallowUser?
-    var score: Int
-    var tags: [String]
-    var title: String
-    var viewCount: Int
+    public var articleID: Int
+    public var articleType: String
+    public var body: String
+    public var bodyMarkdown: String
+    public var commentCount: Int
+    public var comments: [Comment]?
+    public var creationDate: Date
+    public var lastActivityDate: Date
+    public var lastEditDate: Date?
+    public var lastEditor: ShallowUser
+    public var link: String
+    public var owner: ShallowUser?
+    public var score: Int
+    public var tags: [String]
+    public var title: String
+    public var viewCount: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case articleID = "article_id"
         case articleType = "article_type"
         case body

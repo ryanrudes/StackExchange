@@ -1,34 +1,34 @@
 import Foundation
 
 public struct SearchExcerpt: Codable {
-    var answerCount: Int?
-    var answerID: Int?
-    var body: String
-    var closedDate: Date?
-    var communityOwnedDate: Date
-    var creationDate: Date
-    var equivalentTagSearch: [String]?
-    var excerpt: String
-    var hasAcceptedAnswer: Bool?
-    var isAccepted: Bool?
-    var isAnswered: Bool?
-    var itemType: ItemType
-    var lastActivityDate: Date
-    var lastActivityUser: ShallowUser
-    var lockedDate: Date
-    var owner: ShallowUser
-    var questionID: Int?
-    var questionScore: Int?
-    var score: Int
-    var tags: [String]?
-    var title: String
+    public var answerCount: Int?
+    public var answerID: Int?
+    public var body: String
+    public var closedDate: Date?
+    public var communityOwnedDate: Date
+    public var creationDate: Date
+    public var equivalentTagSearch: [String]?
+    public var excerpt: String
+    public var hasAcceptedAnswer: Bool?
+    public var isAccepted: Bool?
+    public var isAnswered: Bool?
+    public var itemType: ItemType
+    public var lastActivityDate: Date
+    public var lastActivityUser: ShallowUser
+    public var lockedDate: Date
+    public var owner: ShallowUser
+    public var questionID: Int?
+    public var questionScore: Int?
+    public var score: Int
+    public var tags: [String]?
+    public var title: String
     
     public enum ItemType: String, Codable {
         case question
         case answer
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case answerCount = "answer_count"
         case answerID = "answer_id"
         case body

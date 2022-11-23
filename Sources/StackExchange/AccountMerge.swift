@@ -1,11 +1,11 @@
 import Foundation
 
 public struct AccountMerge: Codable {
-    var mergeDate: Date
-    var newAccountid: Int
-    var oldAccountid: Int
+    public var mergeDate: Date
+    public var newAccountid: Int
+    public var oldAccountid: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case mergeDate = "merge_date"
         case newAccountid = "new_account_id"
         case oldAccountid = "old_account_id"

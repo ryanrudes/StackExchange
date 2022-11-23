@@ -1,19 +1,19 @@
 import Foundation
 
 public struct NetworkUser: Codable {
-    var accountID: Int
-    var answerCount: Int
-    var badgeCounts: BadgeCount
-    var creationDate: Date
-    var lastAccessDate: Date
-    var questionCount: Int
-    var reputation: Int
-    var siteName: String
-    var siteUrl: String
-    var topAnswers: [NetworkPost]
-    var topQuestions: [NetworkPost]
-    var userID: Int
-    var userType: UserType
+    public var accountID: Int
+    public var answerCount: Int
+    public var badgeCounts: BadgeCount
+    public var creationDate: Date
+    public var lastAccessDate: Date
+    public var questionCount: Int
+    public var reputation: Int
+    public var siteName: String
+    public var siteUrl: String
+    public var topAnswers: [NetworkPost]
+    public var topQuestions: [NetworkPost]
+    public var userID: Int
+    public var userType: UserType
     
     public enum UserType: String, Codable {
         case unregistered
@@ -23,7 +23,7 @@ public struct NetworkUser: Codable {
         case doesNotExist = "does_not_exist"
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case accountID = "account_id"
         case answerCount = "answer_count"
         case badgeCounts = "badge_counts"

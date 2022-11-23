@@ -1,37 +1,37 @@
 import Foundation
 
 public struct User: Codable {
-    var aboutMe: String?
-    var acceptRate: Int?
-    var accountID: Int
-    var age: Int?
-    var answerCount: Int
-    var badgeCounts: BadgeCount
-    var collectives: [CollectiveMembership]?
-    var creationDate: Date
-    var displayName: String
-    var downVoteCount: Int
-    var isEmployee: Bool
-    var lastAccessDate: Date
-    var lastModifiedDate: Date?
-    var link: String
-    var location: String?
-    var profileImage: String
-    var questionCount: Int
-    var reputation: Int
-    var reputationChangeDay: Int
-    var reputationChangeMonth: Int
-    var reputationChangeQuarter: Int
-    var reputationChangeWeek: Int
-    var reputationChangeYear: Int
-    var timedPenaltyDate: Date?
-    var upVoteCount: Int
-    var userID: Int
-    var userType: UserType
-    var viewCount: Int
-    var websiteUrl: String?
+    public var aboutMe: String?
+    public var acceptRate: Int?
+    public var accountID: Int
+    public var age: Int?
+    public var answerCount: Int
+    public var badgeCounts: BadgeCount
+    public var collectives: [CollectiveMembership]?
+    public var creationDate: Date
+    public var displayName: String
+    public var downVoteCount: Int
+    public var isEmployee: Bool
+    public var lastAccessDate: Date
+    public var lastModifiedDate: Date?
+    public var link: String
+    public var location: String?
+    public var profileImage: String
+    public var questionCount: Int
+    public var reputation: Int
+    public var reputationChangeDay: Int
+    public var reputationChangeMonth: Int
+    public var reputationChangeQuarter: Int
+    public var reputationChangeWeek: Int
+    public var reputationChangeYear: Int
+    public var timedPenaltyDate: Date?
+    public var upVoteCount: Int
+    public var userID: Int
+    public var userType: UserType
+    public var viewCount: Int
+    public var websiteUrl: String?
     
-    enum UserType: String, Codable {
+    public enum UserType: String, Codable {
         case unregistered
         case registered
         case moderator

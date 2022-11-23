@@ -1,8 +1,8 @@
 import Foundation
 
 public struct CollectiveExternalLink: Codable {
-    var link: String
-    var collectiveExternalLinkType: CollectiveExternalLinkType
+    public var link: String
+    public var collectiveExternalLinkType: CollectiveExternalLinkType
     
     public enum CollectiveExternalLinkType: String, Codable {
         case website
@@ -13,7 +13,7 @@ public struct CollectiveExternalLink: Codable {
         case support
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case link
         case collectiveExternalLinkType
     }

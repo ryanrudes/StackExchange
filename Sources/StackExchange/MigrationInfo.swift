@@ -1,11 +1,11 @@
 import Foundation
 
 public struct MigrationInfo: Codable {
-    var onDate: Date
-    var otherSite: Site
-    var questionID: Int
+    public var onDate: Date
+    public var otherSite: Site
+    public var questionID: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case onDate = "on_date"
         case otherSite = "other_site"
         case questionID = "question_id"

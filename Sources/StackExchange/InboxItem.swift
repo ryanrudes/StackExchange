@@ -1,16 +1,16 @@
 import Foundation
 
 public struct InboxItem: Codable {
-    var answerID: Int?
-    var body: String?
-    var commentID: Int?
-    var creationDate: Date
-    var isUnread: Bool
-    var itemType: ItemType
-    var link: String
-    var questionID: Int?
-    var site: Site?
-    var title: String
+    public var answerID: Int?
+    public var body: String?
+    public var commentID: Int?
+    public var creationDate: Date
+    public var isUnread: Bool
+    public var itemType: ItemType
+    public var link: String
+    public var questionID: Int?
+    public var site: Site?
+    public var title: String
 
     public enum ItemType: String, Codable {
         case comment
@@ -24,7 +24,7 @@ public struct InboxItem: Codable {
         case subcommunityLeaderboard = "subcommunity_leaderboard"
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case answerID = "answer_id"
         case body
         case commentID = "comment_id"

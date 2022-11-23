@@ -1,23 +1,23 @@
 import Foundation
 
 public struct Revision: Codable {
-    var body: String?
-    var comment: String
-    var contentLicense: String
-    var creationDate: Date
-    var isRollback: Bool
-    var lastBody: String?
-    var lastTags: [String]?
-    var lastTitle: String?
-    var postID: Int
-    var postType: PostType
-    var revisionGid: String
-    var revisionNumber: Int?
-    var revisionType: RevisionType
-    var setCommunityWiki: Bool
-    var tags: [String]?
-    var title: String?
-    var user: ShallowUser
+    public var body: String?
+    public var comment: String
+    public var contentLicense: String
+    public var creationDate: Date
+    public var isRollback: Bool
+    public var lastBody: String?
+    public var lastTags: [String]?
+    public var lastTitle: String?
+    public var postID: Int
+    public var postType: PostType
+    public var revisionGid: String
+    public var revisionNumber: Int?
+    public var revisionType: RevisionType
+    public var setCommunityWiki: Bool
+    public var tags: [String]?
+    public var title: String?
+    public var user: ShallowUser
     
     public enum PostType: String, Codable {
         case question
@@ -30,7 +30,7 @@ public struct Revision: Codable {
         case voteBased = "vote_based"
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case body
         case comment
         case contentLicense = "content_license"

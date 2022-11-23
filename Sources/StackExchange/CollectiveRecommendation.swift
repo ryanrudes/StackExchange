@@ -1,10 +1,10 @@
 import Foundation
 
 public struct CollectiveRecommendation: Codable {
-    var collective: Collective
-    var creationDate: Date
+    public var collective: Collective
+    public var creationDate: Date
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case collective
         case creationDate = "creation_date"
     }

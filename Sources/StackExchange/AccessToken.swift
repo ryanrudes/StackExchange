@@ -1,12 +1,12 @@
 import Foundation
 
 public struct AccessToken: Codable {
-    var accessToken: String
-    var accountID: Int
-    var expiresOnDate: Date?
-    var scope: [String]?
+    public var accessToken: String
+    public var accountID: Int
+    public var expiresOnDate: Date?
+    public var scope: [String]?
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case accountID = "account_id"
         case expiresOnDate = "expires_on_date"

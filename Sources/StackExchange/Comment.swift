@@ -1,20 +1,20 @@
 import Foundation
 
 public struct Comment: Codable {
-    var body: String
-    var bodyMarkdown: String
-    var canFlag: Bool
-    var commentID: Int
-    var contentLicense: String
-    var creationDate: Date
-    var edited: Bool
-    var link: String
-    var owner: ShallowUser?
-    var postID: Int
-    var postType: PostType
-    var replyToUser: ShallowUser?
-    var score: Int
-    var upvoted: Bool
+    public var body: String
+    public var bodyMarkdown: String
+    public var canFlag: Bool
+    public var commentID: Int
+    public var contentLicense: String
+    public var creationDate: Date
+    public var edited: Bool
+    public var link: String
+    public var owner: ShallowUser?
+    public var postID: Int
+    public var postType: PostType
+    public var replyToUser: ShallowUser?
+    public var score: Int
+    public var upvoted: Bool
     
     public enum PostType: String, Codable {
         case question
@@ -22,7 +22,7 @@ public struct Comment: Codable {
         case article
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case body
         case bodyMarkdown = "body_markdown"
         case canFlag = "can_flag"

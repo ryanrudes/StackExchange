@@ -1,10 +1,10 @@
 import Foundation
 
 public struct OriginalQuestion: Codable {
-    var acceptedAnswerid: Int?
-    var answerCount: Int
-    var questionID: Int
-    var title: String
+    public var acceptedAnswerid: Int?
+    public var answerCount: Int
+    public var questionID: Int
+    public var title: String
 
     enum CodingKeys: String, CodingKey {
         case acceptedAnswerid = "accepted_answer_id"

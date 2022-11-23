@@ -1,11 +1,11 @@
 import Foundation
 
 public struct Event: Codable {
-    var creationDate: Date
-    var eventID: Int
-    var eventType: EventType
-    var excerpt: String
-    var link: String
+    public var creationDate: Date
+    public var eventID: Int
+    public var eventType: EventType
+    public var excerpt: String
+    public var link: String
     
     public enum EventType: String, Codable {
         case questionPosted = "question_posted"
@@ -15,7 +15,7 @@ public struct Event: Codable {
         case userCreated = "user_created"
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case creationDate = "creation_date"
         case eventID = "event_id"
         case eventType = "event_type"

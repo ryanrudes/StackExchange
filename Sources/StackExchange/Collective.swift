@@ -1,14 +1,14 @@
 import Foundation
 
 public struct Collective: Codable {
-    var description: String
-    var externalLinks: [CollectiveExternalLink]
-    var link: String
-    var name: String
-    var slug: String
-    var tags: [String]
+    public var description: String
+    public var externalLinks: [CollectiveExternalLink]
+    public var link: String
+    public var name: String
+    public var slug: String
+    public var tags: [String]
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case description
         case externalLinks = "external_links"
         case link

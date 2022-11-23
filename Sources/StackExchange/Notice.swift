@@ -1,11 +1,11 @@
 import Foundation
 
 public struct Notice: Codable {
-    var body: String
-    var creationDate: Date
-    var ownerUserid: Int
+    public var body: String
+    public var creationDate: Date
+    public var ownerUserid: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case body
         case creationDate = "creation_date"
         case ownerUserid = "owner_user_id"

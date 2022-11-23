@@ -1,28 +1,28 @@
 import Foundation
 
 public struct Post: Codable {
-    var body: String
-    var bodyMarkdown: String
-    var collectives: [Collective]?
-    var commentCount: Int
-    var comments: [Comment]?
-    var contentLicense: String
-    var creationDate: Date
-    var downVoteCount: Int
-    var downvoted: Bool
-    var lastActivityDate: Date
-    var lastEditDate: Date?
-    var lastEditor: ShallowUser
-    var link: String
-    var owner: ShallowUser?
-    var postID: Int
-    var postType: PostType
-    var postedByCollectives: [Collective]?
-    var score: Int
-    var shareLink: String
-    var title: String
-    var upVoteCount: Int
-    var upvoted: Bool
+    public var body: String
+    public var bodyMarkdown: String
+    public var collectives: [Collective]?
+    public var commentCount: Int
+    public var comments: [Comment]?
+    public var contentLicense: String
+    public var creationDate: Date
+    public var downVoteCount: Int
+    public var downvoted: Bool
+    public var lastActivityDate: Date
+    public var lastEditDate: Date?
+    public var lastEditor: ShallowUser
+    public var link: String
+    public var owner: ShallowUser?
+    public var postID: Int
+    public var postType: PostType
+    public var postedByCollectives: [Collective]?
+    public var score: Int
+    public var shareLink: String
+    public var title: String
+    public var upVoteCount: Int
+    public var upvoted: Bool
     
     public enum PostType: String, Codable {
         case question
@@ -30,7 +30,7 @@ public struct Post: Codable {
         case article
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case body
         case bodyMarkdown = "body_markdown"
         case collectives

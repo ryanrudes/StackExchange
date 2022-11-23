@@ -1,10 +1,10 @@
 import Foundation
 
 public struct RelatedSite: Codable {
-    var apiSiteParameter: String?
-    var name: String
-    var relation: Relation
-    var siteUrl: String
+    public var apiSiteParameter: String?
+    public var name: String
+    public var relation: Relation
+    public var siteUrl: String
     
     public enum Relation: String, Codable {
         case parent
@@ -12,7 +12,7 @@ public struct RelatedSite: Codable {
         case chat
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case apiSiteParameter = "api_site_parameter"
         case name
         case relation

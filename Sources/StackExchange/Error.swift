@@ -2,11 +2,11 @@ import Foundation
 
 /*
 public struct Error: Codable {
-    var description: String
-    var errorID: Int
-    var errorName: String
+    public var description: String
+    public var errorID: Int
+    public var errorName: String
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case description
         case errorID = "error_id"
         case errorName = "error_name"

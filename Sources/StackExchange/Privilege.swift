@@ -1,11 +1,11 @@
 import Foundation
 
 public struct Privilege: Codable {
-    var description: String
-    var reputation: Int
-    var shortDescription: String
+    public var description: String
+    public var reputation: Int
+    public var shortDescription: String
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case description
         case reputation
         case shortDescription = "short_description"

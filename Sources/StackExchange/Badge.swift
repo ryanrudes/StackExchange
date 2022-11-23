@@ -1,14 +1,14 @@
 import Foundation
 
 public struct Badge: Codable {
-    var awardCount: Int
-    var badgeID: Int
-    var badgeType: BadgeType
-    var description: String
-    var link: String
-    var name: String
-    var rank: Rank
-    var user: ShallowUser?
+    public var awardCount: Int
+    public var badgeID: Int
+    public var badgeType: BadgeType
+    public var description: String
+    public var link: String
+    public var name: String
+    public var rank: Rank
+    public var user: ShallowUser?
     
     enum BadgeType: String, Codable {
         case named

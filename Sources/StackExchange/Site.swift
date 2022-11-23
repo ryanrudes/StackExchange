@@ -1,24 +1,24 @@
 import Foundation
 
 public struct Site: Codable {
-    var aliases: [String]?
-    var apiSiteParameter: String
-    var audience: String
-    var closedBetaDate: Date?
-    var faviconUrl: String
-    var highResolutionIconUrl: String?
-    var iconUrl: String
-    var launchDate: Date
-    var logoUrl: String
-    var markdownExtensions: [MarkdownExtension]?
-    var name: String
-    var openBetaDate: Date?
-    var relatedSites: [RelatedSite]?
-    var siteState: SiteState
-    var siteType: SiteType
-    var siteUrl: String
-    var styling: Styling
-    var twitterAccount: String?
+    public var aliases: [String]?
+    public var apiSiteParameter: String
+    public var audience: String
+    public var closedBetaDate: Date?
+    public var faviconUrl: String
+    public var highResolutionIconUrl: String?
+    public var iconUrl: String
+    public var launchDate: Date
+    public var logoUrl: String
+    public var markdownExtensions: [MarkdownExtension]?
+    public var name: String
+    public var openBetaDate: Date?
+    public var relatedSites: [RelatedSite]?
+    public var siteState: SiteState
+    public var siteType: SiteType
+    public var siteUrl: String
+    public var styling: Styling
+    public var twitterAccount: String?
 
     public enum MarkdownExtension: String, Codable {
         case mathjax = "MathJax"
@@ -39,7 +39,7 @@ public struct Site: Codable {
         case meta = "meta_site"
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case aliases
         case apiSiteParameter = "api_site_parameter"
         case audience

@@ -1,17 +1,17 @@
 import Foundation
 
 public struct SuggestedEdit: Codable {
-    var approvalDate: Date?
-    var body: String?
-    var comment: String
-    var creationDate: Date
-    var postID: Int
-    var postType: PostType
-    var proposingUser: ShallowUser?
-    var rejectionDate: Date?
-    var suggestedEditid: Int
-    var tags: [String]?
-    var title: String?
+    public var approvalDate: Date?
+    public var body: String?
+    public var comment: String
+    public var creationDate: Date
+    public var postID: Int
+    public var postType: PostType
+    public var proposingUser: ShallowUser?
+    public var rejectionDate: Date?
+    public var suggestedEditid: Int
+    public var tags: [String]?
+    public var title: String?
 
     public enum PostType: String, Codable {
         case question
@@ -19,7 +19,7 @@ public struct SuggestedEdit: Codable {
         case article
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case approvalDate = "approval_date"
         case body
         case comment

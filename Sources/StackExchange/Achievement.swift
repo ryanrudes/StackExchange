@@ -1,15 +1,15 @@
 import Foundation
 
 public struct Achievement: Codable {
-    var accountID: Int
-    var achievementType: AchievementType
-    var badgeRank: BadgeRank?
-    var creationDate: Date
-    var isUnread: Bool
-    var link: String
-    var onSite: Site
-    var reputationChange: Int?
-    var title: String
+    public var accountID: Int
+    public var achievementType: AchievementType
+    public var badgeRank: BadgeRank?
+    public var creationDate: Date
+    public var isUnread: Bool
+    public var link: String
+    public var onSite: Site
+    public var reputationChange: Int?
+    public var title: String
     
     public enum AchievementType: String, Codable {
         case badge
@@ -23,7 +23,7 @@ public struct Achievement: Codable {
         case bronze
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case accountID = "account_id"
         case achievementType = "achievement_type"
         case badgeRank = "badge_rank"

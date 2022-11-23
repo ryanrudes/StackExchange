@@ -36,7 +36,7 @@ public struct Answer: Codable {
     public var upVoteCount: Int
     public var upvoted: Bool
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case accepted
         case answerID = "answer_id"
         case awardedBountyAmount = "awarded_bounty_amount"

@@ -1,58 +1,58 @@
 import Foundation
 
 public struct Question: Codable {
-    var acceptedAnswerid: Int?
-    var answerCount: Int
-    var answers: [Answer]?
-    var body: String
-    var bodyMarkdown: String
-    var bountyAmount: Int?
-    var bountyClosesDate: Date?
-    var bountyUser: ShallowUser?
-    var canAnswer: Bool
-    var canClose: Bool
-    var canComment: Bool
-    var canEdit: Bool
-    var canFlag: Bool
-    var canSuggestEdit: Bool
-    var closeVoteCount: Int
-    var closedDate: Date?
-    var closedDetails: ClosedDetails?
-    var closedReason: String?
-    var collectives: [Collective]
-    var commentCount: Int
-    var comments: [Comment]?
-    var communityOwnedDate: Date?
-    var contentLicense: String
-    var creationDate: Date
-    var deleteVoteCount: Int
-    var downVoteCount: Int
-    var downvoted: Bool
-    var favoriteCount: Int
-    var favorited: Bool
-    var isAnswered: Bool
-    var lastActivityDate: Date
-    var lastEditDate: Date?
-    var lastEditor: ShallowUser
-    var link: String
-    var lockedDate: Date?
-    var migratedFrom: MigrationInfo?
-    var migratedTo: MigrationInfo?
-    var notice: Notice
-    var owner: ShallowUser?
-    var postedByCollectives: [Collective]
-    var protectedDate: Date?
-    var questionID: Int
-    var reopenVoteCount: Int
-    var score: Int
-    var shareLink: String
-    var tags: [String]
-    var title: String
-    var upVoteCount: Int
-    var upvoted: Bool
-    var viewCount: Int
+    public var acceptedAnswerid: Int?
+    public var answerCount: Int
+    public var answers: [Answer]?
+    public var body: String
+    public var bodyMarkdown: String
+    public var bountyAmount: Int?
+    public var bountyClosesDate: Date?
+    public var bountyUser: ShallowUser?
+    public var canAnswer: Bool
+    public var canClose: Bool
+    public var canComment: Bool
+    public var canEdit: Bool
+    public var canFlag: Bool
+    public var canSuggestEdit: Bool
+    public var closeVoteCount: Int
+    public var closedDate: Date?
+    public var closedDetails: ClosedDetails?
+    public var closedReason: String?
+    public var collectives: [Collective]
+    public var commentCount: Int
+    public var comments: [Comment]?
+    public var communityOwnedDate: Date?
+    public var contentLicense: String
+    public var creationDate: Date
+    public var deleteVoteCount: Int
+    public var downVoteCount: Int
+    public var downvoted: Bool
+    public var favoriteCount: Int
+    public var favorited: Bool
+    public var isAnswered: Bool
+    public var lastActivityDate: Date
+    public var lastEditDate: Date?
+    public var lastEditor: ShallowUser
+    public var link: String
+    public var lockedDate: Date?
+    public var migratedFrom: MigrationInfo?
+    public var migratedTo: MigrationInfo?
+    public var notice: Notice
+    public var owner: ShallowUser?
+    public var postedByCollectives: [Collective]
+    public var protectedDate: Date?
+    public var questionID: Int
+    public var reopenVoteCount: Int
+    public var score: Int
+    public var shareLink: String
+    public var tags: [String]
+    public var title: String
+    public var upVoteCount: Int
+    public var upvoted: Bool
+    public var viewCount: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case acceptedAnswerid = "accepted_answer_id"
         case answerCount = "answer_count"
         case answers

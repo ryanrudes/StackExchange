@@ -1,8 +1,8 @@
 import Foundation
 
 public struct CollectiveMembership: Codable {
-    var collective: Collective
-    var role: Role
+    public var collective: Collective
+    public var role: Role
     
     public enum Role: String, Codable {
         case admin
@@ -10,7 +10,7 @@ public struct CollectiveMembership: Codable {
         case member
     }
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case collective
         case role
     }

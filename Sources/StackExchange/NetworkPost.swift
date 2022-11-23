@@ -1,10 +1,10 @@
 import Foundation
 
 public struct NetworkPost: Codable {
-    var postID: Int
-    var postType: PostType
-    var score: Int
-    var title: String
+    public var postID: Int
+    public var postType: PostType
+    public var score: Int
+    public var title: String
 
     public enum PostType: String, Codable {
         case question
@@ -12,7 +12,7 @@ public struct NetworkPost: Codable {
         case article
     }
     
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case postID = "post_id"
         case postType = "post_type"
         case score

@@ -1,22 +1,22 @@
 import Foundation
 
 public struct Info: Codable {
-    var answersPerMinute: Double
-    var apiRevision: String
-    var badgesPerMinute: Double
-    var newActiveUsers: Int
-    var questionsPerMinute: Double
-    var site: Site
-    var totalAccepted: Int
-    var totalAnswers: Int
-    var totalBadges: Int
-    var totalComments: Int
-    var totalQuestions: Int
-    var totalUnanswered: Int
-    var totalUsers: Int
-    var totalVotes: Int
+    public var answersPerMinute: Double
+    public var apiRevision: String
+    public var badgesPerMinute: Double
+    public var newActiveUsers: Int
+    public var questionsPerMinute: Double
+    public var site: Site
+    public var totalAccepted: Int
+    public var totalAnswers: Int
+    public var totalBadges: Int
+    public var totalComments: Int
+    public var totalQuestions: Int
+    public var totalUnanswered: Int
+    public var totalUsers: Int
+    public var totalVotes: Int
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case answersPerMinute = "answers_per_minute"
         case apiRevision = "api_revision"
         case badgesPerMinute = "badges_per_minute"
