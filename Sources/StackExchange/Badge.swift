@@ -10,12 +10,12 @@ public struct Badge: Codable {
     public var rank: Rank
     public var user: ShallowUser?
     
-    enum BadgeType: String, Codable {
+    public enum BadgeType: String, Codable {
         case named
         case tagBased = "tag_based"
     }
     
-    enum Rank: String, Codable {
+    public enum Rank: String, Codable {
         case gold
         case silver
         case bronze
